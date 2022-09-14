@@ -1,9 +1,18 @@
-import './App.scss';
+import '../styles/Splash.scss';
+import React from 'react'
+import { useNavigate } from 'react-router';
 
-function App() {
+export default function Splash() {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/home');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="Splash">
+      <header className="Splash-header">
         <img className="logo" src="logo-c.jpeg" alt="logo"></img>
       </header>
       <div>
@@ -12,7 +21,7 @@ function App() {
         <br></br>
           let us be a safe haven for those who perform in the night.</p>
 
-       <div class="btn">
+       <div class="btn" onClick={handleClick}>
           <span class="btn__text">Enter</span>
           <span class="btn__spotlight"></span>
        </div>
@@ -21,5 +30,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
