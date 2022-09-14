@@ -1,0 +1,83 @@
+body {
+  background-color: #530a17;
+  font-family: 'Cinzel', serif;
+}
+
+.Splash {
+  text-align: center;
+
+  .Splash-header {
+    min-height: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    background-color: #540715;
+  }
+
+  a {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #61dafb;
+    display: flex;
+  }
+
+  p {
+    color: white;
+    font-size: 25px;
+  }
+
+  // sourced from https://codepen.io/egrucza/pen/RpBwOE
+  .btn {
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    width: 320px;
+    height: 70px;
+    background-color: #540715;
+    color: white;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background-color 2000ms ease-in;
+
+    &__text {
+        z-index: 2;
+        position: relative;
+    }
+
+    &__spotlight {
+        content: '';
+        display: block;
+        background-color: #e9ebc6;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        position: absolute;
+        filter: blur(10px);
+        z-index: 1;
+        opacity: 0;
+        transform: scale(0);
+        transition: transform 2000ms ease-in, background-color 3000ms ease-in, opacity 1000ms ease-in;
+    }
+
+    &:hover {
+        background-color: #e9ebc6;
+        transition: background-color 3000ms ease-out;
+        color: black;
+        .btn__spotlight {
+            transform: scale(3);
+            background-color: #e9ebc6;
+            opacity: 1;
+            transition: transform 3000ms ease-out, background-color 3000ms ease-out, opacity 1000ms ease-out;
+        }
+    }
+  }
+}
